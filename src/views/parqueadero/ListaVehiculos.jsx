@@ -282,6 +282,7 @@ const ListaVehiculos = () => {
                     <CTableHeaderCell className="text-white">Cédula</CTableHeaderCell>
                     <CTableHeaderCell className="text-white">Correo</CTableHeaderCell>
                     <CTableHeaderCell className="text-white">Estado</CTableHeaderCell>
+                    <CTableHeaderCell className="text-white text-center">Acciones</CTableHeaderCell>
                   </CTableRow>
                 )}
 
@@ -318,7 +319,7 @@ const ListaVehiculos = () => {
               <CTableBody>
                 {datosPaginados.length === 0 ? (
                   <CTableRow>
-                    <CTableDataCell colSpan={9} className="text-center py-4">
+                    <CTableDataCell colSpan={10} className="text-center py-4">
                       No se encontraron registros.
                     </CTableDataCell>
                   </CTableRow>
@@ -397,6 +398,30 @@ const ListaVehiculos = () => {
                             <CBadge color={item.autorizado !== false ? 'success' : 'danger'} className="px-2 py-1">
                               {item.autorizado !== false ? 'Autorizado' : 'No autorizado'}
                             </CBadge>
+                          </CTableDataCell>
+
+                          {/* Acciones */}
+                          <CTableDataCell className="text-center">
+                            <div className="d-flex justify-content-center gap-2">
+                              <CButton
+                                color="warning"
+                                size="sm"
+                                title="Editar"
+                                onClick={() => handleEditar(item)}
+                                disabled={procesando}
+                              >
+                                <CIcon icon={cilPencil} />
+                              </CButton>
+                              <CButton
+                                color="danger"
+                                size="sm"
+                                title="Eliminar"
+                                onClick={() => handleConfirmarEliminar(item)}
+                                disabled={procesando}
+                              >
+                                <CIcon icon={cilTrash} style={{ color: '#fff' }} />
+                              </CButton>
+                            </div>
                           </CTableDataCell>
                         </CTableRow>
                       )
