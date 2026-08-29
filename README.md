@@ -2,7 +2,7 @@
 
 Sistema de gestión y monitoreo en tiempo real para el parqueadero de la **Universidad Técnica Estatal de Quevedo (UTEQ)**. Esta aplicación web permite la administración de vehículos autorizados, control de ocupación de puestos, directorio de propietarios e historial de accesos.
 
-![Captura del Sistema Smart Parking](./assets/image.png)
+![Captura del Sistema Smart Parking](src/assets/image.png)
 
 ---
 
