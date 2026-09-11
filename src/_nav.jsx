@@ -6,6 +6,7 @@ import {
   cilGrid,
   cilUser,
   cilHistory,
+  cilCamera,
 } from '@coreui/icons'
 import { CNavItem, CNavTitle } from '@coreui/react'
 
@@ -13,6 +14,12 @@ const _nav = [
   {
     component: CNavTitle,
     name: 'PARQUEADEROS',
+  },
+  {
+    component: CNavItem,
+    name: 'Monitoreo de Entrada',
+    to: '/parqueadero/monitoreo-entrada',
+    icon: <CIcon icon={cilCamera} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
@@ -32,11 +39,11 @@ const _nav = [
     to: '/parqueadero/propietarios',
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
- {
-  component: CNavItem,
-  name: 'Historial Registros',
-  to: '/parqueadero/historial',
-  icon: <CIcon icon={cilHistory} customClassName="nav-icon" />,
+  {
+    component: CNavItem,
+    name: 'Historial Registros',
+    to: '/parqueadero/historial',
+    icon: <CIcon icon={cilHistory} customClassName="nav-icon" />,
   },
 ]
 

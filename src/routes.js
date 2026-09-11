@@ -18,10 +18,11 @@ import React from 'react'
 // Dashboard
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 
-// Parqueadero / Vehículos / Historial
-const ListaVehiculos = React.lazy(
-  () => import('./views/parqueadero/ListaVehiculos'),
-)
+// Vista nueva obligatoria
+const MonitoreoEntrada = React.lazy(() => import('./views/parqueadero/MonitoreoEntrada'))
+
+// Vistas existentes del repositorio base (apuntando al componente que ya tienes)
+const ListaVehiculos = React.lazy(() => import('./views/parqueadero/ListaVehiculos'))
 
 /**
  * Array of route configuration objects
@@ -31,7 +32,7 @@ const ListaVehiculos = React.lazy(
 export const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
-  { path: '/parqueadero', exact: true, name: 'Parqueadero', element: ListaVehiculos },
+  { path: '/parqueadero/monitoreo-entrada', name: 'Monitoreo de Entrada', element: MonitoreoEntrada },
   { path: '/parqueadero/vehiculos', name: 'Vehículos', element: ListaVehiculos },
   { path: '/parqueadero/puestos', name: 'Puestos de Parqueadero', element: ListaVehiculos },
   { path: '/parqueadero/propietarios', name: 'Propietarios', element: ListaVehiculos },
